@@ -132,6 +132,4 @@ public class MatchService {
                 .map(match -> modelMapper.map(match, MatchDTO.class))
                 .collect(Collectors.toList());
     }
-
-
 }
