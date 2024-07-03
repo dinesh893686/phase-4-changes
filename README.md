@@ -38,3 +38,32 @@ CREATE TABLE PlayerPerformance (
     FOREIGN KEY (player_id) REFERENCES Player(id),
     FOREIGN KEY (match_id) REFERENCES Match(id)
 );
+
+
+    Team                          Player                    PlayerPerformance
+    +-----------+                 +------------+            +-------------------+
+    | id (PK)   |1------------N   | id (PK)    |1---------N | id (PK)           |
+    | name      |                 | name       |            | player_id (FK)    |
+    +-----------+                 | team_id (FK)|            | match_id (FK)     |
+          1                        +------------+            | runsScored        |
+          |                                                  | ballsFaced        |
+          |                                                  | runsConceded      |
+          |                                                  | wicketsTaken      |
+          |                                                 +-------------------+
+           |                                                       N
+            |                                                      |
+             |                                                     |
+              |                                                   1
+    Match      N                 
+    +-------------+                                                
+    | id (PK)     |                                             
+    | team1_id (FK)|                                           
+    | team2_id (FK)|                                             
+    | overs       |                                             
+    | team1Score  |                                             
+    | team1Wickets|                                             
+    | team2Score  |                                             
+    | team2Wickets|                                             
+    +-------------+                                              
+
+
